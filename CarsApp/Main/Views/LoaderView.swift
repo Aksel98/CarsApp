@@ -22,7 +22,7 @@ struct LoaderView: View {
     var body: some View {
         Circle()
             .trim(from: isAnimating ? 0.5 : 0.4, to: 1.4)
-            .stroke(Color.baseColors.getBrown(), style: StrokeStyle(lineWidth: size / 30, lineCap: .round, lineJoin: .round))
+            .stroke(Color.baseColors.brown, style: StrokeStyle(lineWidth: size / 30, lineCap: .round, lineJoin: .round))
             .animation(.easeInOut(duration: speed / 2).repeatForever(), value: isAnimating)
             .rotationEffect(
                 Angle(degrees: isAnimating ? 360 : 0)

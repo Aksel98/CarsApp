@@ -9,15 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     
+    init() {
+        UITabBar.appearance().isTranslucent = false
+        UITabBar.appearance().unselectedItemTintColor = UIColor(Color.primary)
+        UITabBar.appearance().barTintColor = .red
+    }
+    
     var body: some View {
         TabView {
             ZStack {
                 HomeView()
-                VStack {
-                    Spacer()
-                    Color.baseColors.getWhite().frame(height: 100)
-                }
-                .ignoresSafeArea(edges: .bottom)
             }
             .tabItem {
                 Image(systemName: "house")
@@ -39,7 +40,7 @@ struct ContentView: View {
                     Text("Settings")
                 }
         }
-        .accentColor(.baseColors.getBrown())
+        .accentColor(.baseColors.brown)
     }
 }
 

@@ -12,11 +12,11 @@ struct CarActionsView: View {
     @Binding private var carLockingInfo: CarLockedInfoConfig
     
     private var lockedColor: Color {
-        return carLockingInfo.lockedState == .locked ? .baseColors.getBrown() : .black
+        return carLockingInfo.lockedState == .locked ? .baseColors.brown : .black
     }
     
     private var unLockedColor: Color {
-        return carLockingInfo.lockedState == .unlocked ? .baseColors.getBrown() : .black
+        return carLockingInfo.lockedState == .unlocked ? .baseColors.brown : .black
     }
     
     init(carLockingInfo: Binding<CarLockedInfoConfig>) {
@@ -33,10 +33,10 @@ struct CarActionsView: View {
                         if carLockingInfo.lockedState != .unknown {
                             Divider()
                                 .frame(width: 2, height: 20)
-                                .background(Color.baseColors.getDarkGray())
+                                .background(Color.baseColors.darkGray)
                             Text(carLockingInfo.lockedState.message)
                                 .font(.system(size: 15, weight: .bold))
-                                .foregroundColor(Color.baseColors.getDarkGray())
+                                .foregroundColor(Color.baseColors.darkGray)
                         }
                     }
                     
@@ -89,7 +89,8 @@ struct CarActionsView: View {
     
     private func getActionView(buttonView: AnyView, action: (() -> Void)? = nil) -> some View {
         return Button(action: { action?() } ) { buttonView }
-            .frame(width: 60, height: 60)
+            .frame(maxWidth: 60, maxHeight: 60)
+            .aspectRatio(1, contentMode: .fit)
             .background(RoundedRectangle(cornerRadius: 30))
     }
 }

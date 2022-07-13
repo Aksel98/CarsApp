@@ -19,7 +19,7 @@ struct HeaderView: View {
                     .lineLimit(2)
                 .font(.system(size: 25))
                 Divider().frame(width: 2, height: 30)
-                    .background(Color.baseColors.getBrown())
+                    .background(Color.baseColors.brown)
               
                 HStack {
                     Image("notif_gas")
@@ -31,7 +31,7 @@ struct HeaderView: View {
             .padding(.horizontal)
             .padding(.top, (UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0) + 5)
             .padding(.bottom, 15)
-            .background(Color.baseColors.getWhite())
+            .background(Color.baseColors.white)
             
             Spacer()
         }

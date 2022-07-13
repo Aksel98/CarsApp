@@ -21,8 +21,8 @@ struct HomeView: View {
                 
                 VStack {
                     LinearGradient(gradient: Gradient(stops: [
-                        Gradient.Stop(color: Color.baseColors.getLightGray(), location: 0.2),
-                        Gradient.Stop(color: Color.baseColors.getGray(), location: 0.2),
+                        Gradient.Stop(color: Color.baseColors.lightGray, location: 0.2),
+                        Gradient.Stop(color: Color.baseColors.gray, location: 0.2),
                     ]), startPoint: .top, endPoint: .bottom)
                     .overlay(
                         VStack {
@@ -34,7 +34,7 @@ struct HomeView: View {
                 }
                 .padding(.top, 20)
             }
-            .background(Color.baseColors.getLightGray())
+            .background(Color.baseColors.lightGray)
             .environmentObject(viewModel)
             
             ToastView(isShowing: $isShowingToast, duration: 5, message: toastViewMessage)

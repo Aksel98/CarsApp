@@ -21,7 +21,7 @@ struct ToastView: View {
                     Spacer()
                     HStack {
                         Text(message)
-                            .foregroundColor(.baseColors.getWhite())
+                            .foregroundColor(.baseColors.white)
                             .font(.system(size: 15, weight: .bold))
                         Spacer()
                         Image("approve_icon")
@@ -31,7 +31,7 @@ struct ToastView: View {
                     }
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .padding()
-                    .background(Color.baseColors.getBlack())
+                    .background(Color.baseColors.black)
                     .cornerRadius(5)
                     .shadow(radius: 5)
                 }

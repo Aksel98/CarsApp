@@ -32,7 +32,7 @@ struct AlertView: View {
     var body: some View {
         if showingAlert {
             ZStack {
-                Color.baseColors.getBlack()
+                Color.baseColors.black
                 .opacity(0.7)
 
                 VStack {
@@ -53,7 +53,7 @@ struct AlertView: View {
                         }
                         .frame(minWidth: 80)
                         .padding(10)
-                        .foregroundColor(Color.baseColors.getBlue())
+                        .foregroundColor(Color.baseColors.blue)
                         .font(.system(size: 15, weight: .bold))
 
                         Button(doneButtonTitle) {
@@ -62,8 +62,8 @@ struct AlertView: View {
                         }
                         .frame(minWidth: 80)
                         .padding(10)
-                        .background(Color.baseColors.getBlue())
-                        .foregroundColor(.baseColors.getWhite())
+                        .background(Color.baseColors.blue)
+                        .foregroundColor(.baseColors.white)
                         .font(.system(size: 15, weight: .bold))
                     }
                     .padding(.trailing, 20)
@@ -71,7 +71,7 @@ struct AlertView: View {
                     .frame(width: alertWidth - 20, height: 50, alignment: .trailing)
                 }
                 .frame(width: alertWidth, height: alertHeight)
-                .background(Color.baseColors.getWhite())
+                .background(Color.baseColors.white)
                 .cornerRadius(10)
             }
             .ignoresSafeArea()

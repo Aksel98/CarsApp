@@ -23,7 +23,7 @@ struct CarInfoView: View {
                     
                     Text("Refresh button")
                         .font(.system(size: 15, weight: .bold))
-                        .foregroundColor(.baseColors.getDarkGray())
+                        .foregroundColor(.baseColors.darkGray)
                 }
                 
                 if let carImageName = viewModel.car?.image, let url = URL(string: carImageName), let data = try? Data(contentsOf: url), let image = UIImage(data: data) {

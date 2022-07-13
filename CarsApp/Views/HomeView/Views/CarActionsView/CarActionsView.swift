@@ -37,6 +37,8 @@ struct CarActionsView: View {
                             Text(carLockingInfo.lockedState.message)
                                 .font(.system(size: 15, weight: .bold))
                                 .foregroundColor(Color.baseColors.darkGray)
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.5)
                         }
                     }
                     

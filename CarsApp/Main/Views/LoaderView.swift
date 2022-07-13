@@ -28,7 +28,7 @@ struct LoaderView: View {
                 Angle(degrees: isAnimating ? 360 : 0)
             )
             .animation(.linear(duration: speed).repeatForever(autoreverses: false), value: isAnimating)
-            .frame(width: size, height: size, alignment: .center)
+            .frame(maxWidth: 60, maxHeight: 60, alignment: .center)
             .onAppear {
                 isAnimating.toggle()
             }

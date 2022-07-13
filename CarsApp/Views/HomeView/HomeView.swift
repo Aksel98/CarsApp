@@ -37,7 +37,7 @@ struct HomeView: View {
             .background(Color.baseColors.lightGray)
             .environmentObject(viewModel)
             
-            ToastView(isShowing: $isShowingToast, duration: 5, message: toastViewMessage)
+            ToastView(isShowing: $isShowingToast, duration: 5, message: toastViewMessage).offset(x: 0, y: 50)
                     
             if carLockingInfo.isShownLockedDoorsPermissionAlert {
                 showDoorsActionsAlert(showingAlert: $carLockingInfo.isShownLockedDoorsPermissionAlert, message: "Please confirm, that you want to lock the doors of \(viewModel.car?.title ?? "Swift")", doneButtonTitle: "Yes, Lock", complition: {

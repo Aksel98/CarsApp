@@ -16,7 +16,7 @@ struct CarInfoView: View {
             VStack {
                 HStack {
                     Button(action: {
-                        viewModel.getCars()
+                        viewModel.fetchData()
                     }) {
                         Image("btn_refresh")
                     }
@@ -26,7 +26,7 @@ struct CarInfoView: View {
                         .foregroundColor(.baseColors.darkGray)
                 }
                 
-                if let carImageName = viewModel.car?.image, let url = URL(string: carImageName), let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+                if let carImageName = viewModel.getImage(), let url = URL(string: carImageName), let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
                     Image(uiImage: image)
                         .resizable()
                         .frame(width: 250, height: 200)

@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject private var viewModel = CarInfoViewModel()
-    @State private var carLockingInfo: CarLockedInfoConfig = CarLockedInfoConfig()
+    @State private var carLockingInfo: CarLockedInfoViewModel = CarLockedInfoViewModel()
     @State private var isShowingToast = false
     @State private var toastViewMessage: String = ""
     
@@ -40,7 +40,7 @@ struct HomeView: View {
             ToastView(isShowing: $isShowingToast, duration: 5, message: toastViewMessage).offset(x: 0, y: 50)
                     
             if carLockingInfo.isShownLockedDoorsPermissionAlert {
-                showDoorsActionsAlert(showingAlert: $carLockingInfo.isShownLockedDoorsPermissionAlert, message: "Please confirm, that you want to lock the doors of \(viewModel.car?.title ?? "Swift")", doneButtonTitle: "Yes, Lock", complition: {
+                showDoorsActionsAlert(showingAlert: $carLockingInfo.isShownLockedDoorsPermissionAlert, message: "Please confirm, that you want to lock the doors of \(viewModel.getTitle() ?? "Swift")", doneButtonTitle: "Yes, Lock", complition: {
                     carLockingInfo.isDoorsLockingInProgress.toggle()
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
@@ -51,7 +51,7 @@ struct HomeView: View {
                     })
                 })
             } else if carLockingInfo.isShownUnlockedDoorsPermissionAlert {
-                showDoorsActionsAlert(showingAlert: $carLockingInfo.isShownUnlockedDoorsPermissionAlert, message: "Please confirm, that you want to unlock the doors of \(viewModel.car?.title ?? "Swift")", doneButtonTitle: "Yes, Unlock", complition: {
+                showDoorsActionsAlert(showingAlert: $carLockingInfo.isShownUnlockedDoorsPermissionAlert, message: "Please confirm, that you want to unlock the doors of \(viewModel.getModel() ?? "Swift")", doneButtonTitle: "Yes, Unlock", complition: {
                     carLockingInfo.isDoorsUnlockingInProgress.toggle()
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {

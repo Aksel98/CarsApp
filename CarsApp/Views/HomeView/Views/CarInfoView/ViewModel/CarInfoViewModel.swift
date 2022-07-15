@@ -9,26 +9,30 @@ import Foundation
 
 final class CarInfoViewModel: ObservableObject {
     
-    @Published var car: CarModel?
+    @Published private var car: CarModel?
     
-    func getCars() {
-        let headers = [
-            "X-RapidAPI-Key": "19e4baebfbmsh8c8d6d6a55ff028p13f81cjsn40223d21aaa8",
-            "X-RapidAPI-Host": "cars20.p.rapidapi.com"
-        ]
-        
-        let request = NSMutableURLRequest(url: NSURL(string: "https://cars20.p.rapidapi.com/extract/?zip_code=23831")! as URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
-        request.allHTTPHeaderFields = headers
-        
-        URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-            guard error == nil, let data = data, let jsonData = try? JSONDecoder().decode(CarsResult.self, from: data) else {
-                print(error?.localizedDescription)
-                return
+    private let repository = CarRepository()
+    
+    func fetchData() {
+        repository.fetchCar(complition: { car in
+            switch result {
+            case .success(let user):
+                self.car = car
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
             }
-            
-            DispatchQueue.main.async {
-                self.car = jsonData.data.listings.filter({ !$0.image.isEmpty }).randomElement()
-            }
-        }).resume()
+        })
+    }
+    
+    func getImage() -> String? {
+        return car?.image
+    }
+    
+    func getTitle() -> String? {
+        return car?.title
+    }
+    
+    func getModel() -> String? {
+        return car?.model
     }
 }

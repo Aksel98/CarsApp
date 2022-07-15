@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92D2337F2880FE920074DCAF /* CarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D2337E2880FE910074DCAF /* CarRepository.swift */; };
+		92D2338128810F140074DCAF /* LockButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D2338028810F140074DCAF /* LockButtonView.swift */; };
+		92D2338328810F2C0074DCAF /* CarEngineActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D2338228810F2C0074DCAF /* CarEngineActionsView.swift */; };
 		92D3132E287C9B8900B32112 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D3132D287C9B8900B32112 /* AlertView.swift */; };
 		92D31336287CA8DB00B32112 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D31335287CA8DB00B32112 /* CarModel.swift */; };
 		92D31338287CAE8500B32112 /* CarsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D31337287CAE8500B32112 /* CarsResult.swift */; };
 		92D3133B287CCD4100B32112 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D3133A287CCD4100B32112 /* ThemeManager.swift */; };
 		92D3133F287CD34400B32112 /* LockedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D3133E287CD34400B32112 /* LockedState.swift */; };
-		92D31342287CD38200B32112 /* CarLockedInfoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D31341287CD38200B32112 /* CarLockedInfoConfig.swift */; };
+		92D31342287CD38200B32112 /* CarLockedInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D31341287CD38200B32112 /* CarLockedInfoViewModel.swift */; };
 		92D31344287CD3E900B32112 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D31343287CD3E900B32112 /* ColorExtension.swift */; };
 		92D31346287CD86D00B32112 /* CarInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D31345287CD86D00B32112 /* CarInfoViewModel.swift */; };
 		92D3134A287CE7AB00B32112 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D31349287CE7AB00B32112 /* ToastView.swift */; };
@@ -50,12 +53,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		92D2337E2880FE910074DCAF /* CarRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRepository.swift; sourceTree = "<group>"; };
+		92D2338028810F140074DCAF /* LockButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockButtonView.swift; sourceTree = "<group>"; };
+		92D2338228810F2C0074DCAF /* CarEngineActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarEngineActionsView.swift; sourceTree = "<group>"; };
 		92D3132D287C9B8900B32112 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		92D31335287CA8DB00B32112 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
 		92D31337287CAE8500B32112 /* CarsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsResult.swift; sourceTree = "<group>"; };
 		92D3133A287CCD4100B32112 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		92D3133E287CD34400B32112 /* LockedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockedState.swift; sourceTree = "<group>"; };
-		92D31341287CD38200B32112 /* CarLockedInfoConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarLockedInfoConfig.swift; sourceTree = "<group>"; };
+		92D31341287CD38200B32112 /* CarLockedInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarLockedInfoViewModel.swift; sourceTree = "<group>"; };
 		92D31343287CD3E900B32112 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		92D31345287CD86D00B32112 /* CarInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoViewModel.swift; sourceTree = "<group>"; };
 		92D31349287CE7AB00B32112 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
@@ -103,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		92D2337D2880FE7D0074DCAF /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				92D2337E2880FE910074DCAF /* CarRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		92D31334287CA8D000B32112 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,7 +155,7 @@
 		92D31340287CD35800B32112 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
-				92D31341287CD38200B32112 /* CarLockedInfoConfig.swift */,
+				92D31341287CD38200B32112 /* CarLockedInfoViewModel.swift */,
 			);
 			path = Configs;
 			sourceTree = "<group>";
@@ -238,6 +252,7 @@
 		92D86F87287B9E2C0095A2A1 /* CarInfoView */ = {
 			isa = PBXGroup;
 			children = (
+				92D2337D2880FE7D0074DCAF /* Repository */,
 				92D31334287CA8D000B32112 /* Model */,
 				92D31347287CD9E100B32112 /* ViewModel */,
 				92D31348287CD9EF00B32112 /* View */,
@@ -248,6 +263,8 @@
 		92D86F88287B9E350095A2A1 /* CarActionsView */ = {
 			isa = PBXGroup;
 			children = (
+				92D2338028810F140074DCAF /* LockButtonView.swift */,
+				92D2338228810F2C0074DCAF /* CarEngineActionsView.swift */,
 				92D86F80287B84700095A2A1 /* CarActionsView.swift */,
 			);
 			path = CarActionsView;
@@ -441,9 +458,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92D31342287CD38200B32112 /* CarLockedInfoConfig.swift in Sources */,
+				92D31342287CD38200B32112 /* CarLockedInfoViewModel.swift in Sources */,
+				92D2338328810F2C0074DCAF /* CarEngineActionsView.swift in Sources */,
 				92D86F7028793BA10095A2A1 /* HomeView.swift in Sources */,
 				92D86F83287B87620095A2A1 /* CarInfoView.swift in Sources */,
+				92D2338128810F140074DCAF /* LockButtonView.swift in Sources */,
+				92D2337F2880FE920074DCAF /* CarRepository.swift in Sources */,
 				92D31344287CD3E900B32112 /* ColorExtension.swift in Sources */,
 				92D3133B287CCD4100B32112 /* ThemeManager.swift in Sources */,
 				92D95CEB2878B7FA00B8211A /* ContentView.swift in Sources */,

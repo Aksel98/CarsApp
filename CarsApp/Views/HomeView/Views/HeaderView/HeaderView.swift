@@ -15,7 +15,7 @@ struct HeaderView: View {
         VStack {
             HStack {
                 Spacer()
-                Text(viewModel.car?.title ?? "Swift")
+                Text(viewModel.getTitle() ?? "Swift")
                     .lineLimit(2)
                 .font(.system(size: 25))
                 Divider().frame(width: 2, height: 30)
@@ -23,7 +23,7 @@ struct HeaderView: View {
               
                 HStack {
                     Image("notif_gas")
-                    Text(viewModel.car?.model ?? "v5").fontWeight(.bold)
+                    Text(viewModel.getModel() ?? "v5").fontWeight(.bold)
                 }
 
                 Spacer()

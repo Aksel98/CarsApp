@@ -9,8 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject private var viewModel = CarInfoViewModel()
-    @State private var carLockingInfo = CarLockedInfoViewModel()
+    @StateObject private var carInfoViewModel = CarInfoViewModel()
+    @State private var carLockedInfoViewModel = CarLockedInfoViewModel()
     @State private var isShowingToast = false
     @State private var toastViewMessage: String = ""
     
@@ -27,7 +27,7 @@ struct HomeView: View {
                     .overlay(
                         VStack {
                             CarInfoView()
-                            CarActionsView(carLockingInfo: $carLockingInfo)
+                            CarActionsView(carLockingInfo: $carLockedInfoViewModel)
                             Spacer()
                         }
                     )
@@ -35,28 +35,28 @@ struct HomeView: View {
                 .padding(.top, 20)
             }
             .background(Color.baseColors.lightGray)
-            .environmentObject(viewModel)
+            .environmentObject(carInfoViewModel)
             
             ToastView(isShowing: $isShowingToast, duration: 5, message: toastViewMessage).offset(x: 0, y: 50)
                     
-            if carLockingInfo.isShownLockedDoorsPermissionAlert {
-                AlertView(showingAlert: $carLockingInfo.isShownLockedDoorsPermissionAlert, title: "Are you sure?", message: "Please confirm, that you want to lock the doors of \(viewModel.getTitle() ?? "Swift")", doneButtonTitle: "Yes, Lock", complition: {
-                    carLockingInfo.isDoorsLockingInProgress.toggle()
+            if carLockedInfoViewModel.isShownLockedDoorsPermissionAlert {
+                AlertView(showingAlert: $carLockedInfoViewModel.isShownLockedDoorsPermissionAlert, title: "Are you sure?", message: "Please confirm, that you want to lock the doors of \(carInfoViewModel.getTitle() ?? "Swift")", doneButtonTitle: "Yes, Lock", complition: {
+                    carLockedInfoViewModel.isDoorsLockingInProgress.toggle()
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-                        carLockingInfo.isDoorsLockingInProgress.toggle()
-                        carLockingInfo.lockedState = .locked
+                        carLockedInfoViewModel.isDoorsLockingInProgress.toggle()
+                        carLockedInfoViewModel.lockedState = .locked
                         isShowingToast = true
                         toastViewMessage = "Doors locked"
                     })
                 })
-            } else if carLockingInfo.isShownUnlockedDoorsPermissionAlert {
-                AlertView(showingAlert: $carLockingInfo.isShownUnlockedDoorsPermissionAlert, title: "Are you sure?", message: "Please confirm, that you want to unlock the doors of \(viewModel.getModel() ?? "Swift")", doneButtonTitle: "Yes, Unlock", complition: {
-                    carLockingInfo.isDoorsUnlockingInProgress.toggle()
+            } else if carLockedInfoViewModel.isShownUnlockedDoorsPermissionAlert {
+                AlertView(showingAlert: $carLockedInfoViewModel.isShownUnlockedDoorsPermissionAlert, title: "Are you sure?", message: "Please confirm, that you want to unlock the doors of \(carInfoViewModel.getModel() ?? "Swift")", doneButtonTitle: "Yes, Unlock", complition: {
+                    carLockedInfoViewModel.isDoorsUnlockingInProgress.toggle()
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-                        carLockingInfo.isDoorsUnlockingInProgress.toggle()
-                        carLockingInfo.lockedState = .unlocked
+                        carLockedInfoViewModel.isDoorsUnlockingInProgress.toggle()
+                        carLockedInfoViewModel.lockedState = .unlocked
                         isShowingToast = true
                         toastViewMessage = "Doors unlocked"
                     })

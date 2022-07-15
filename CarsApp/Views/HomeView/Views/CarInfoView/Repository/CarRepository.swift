@@ -9,7 +9,7 @@ import Foundation
 
 struct CarRepository {
     
-    func fetchCar(complition: @escaping (Result<CarModel, Error>) -> Void) {
+    func fetchData(complition: @escaping (Result<CarModel, Error>) -> Void) {
         let headers = [
             "X-RapidAPI-Key": "19e4baebfbmsh8c8d6d6a55ff028p13f81cjsn40223d21aaa8",
             "X-RapidAPI-Host": "cars20.p.rapidapi.com"

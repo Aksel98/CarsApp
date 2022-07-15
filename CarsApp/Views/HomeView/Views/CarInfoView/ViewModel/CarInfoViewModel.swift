@@ -14,7 +14,7 @@ final class CarInfoViewModel: ObservableObject {
     private let repository = CarRepository()
     
     func fetchData(complition: ((Result<CarModel, Error>) -> Void)? = nil) {
-        repository.fetchCar(complition: { result in
+        repository.fetchData(complition: { result in
             switch result {
             case .success(let car):
                 self.car = car

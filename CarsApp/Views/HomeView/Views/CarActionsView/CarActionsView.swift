@@ -44,7 +44,7 @@ struct CarActionsView: View {
                         }, isDisabled: viewModel.getIsDisabled(), opacity: viewModel.getOpacity(), foregroundColor: viewModel.getUnLockedForegroundColor())
                     }
                     .padding([.all], 15)
-                    .background(Color.white)
+                    .background(Color.baseColors.white)
                 }
                 
                 Spacer()

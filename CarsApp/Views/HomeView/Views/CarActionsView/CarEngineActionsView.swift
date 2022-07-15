@@ -20,11 +20,11 @@ struct CarEngineActionsView: View {
                 LockButtonView(buttonView: AnyView(
                     Text("Start")
                         .font(.system(size: 15, weight: .bold))
-                        .foregroundColor(.white)))
+                        .foregroundColor(.baseColors.white)))
                 LockButtonView(buttonView: AnyView(
                     Text("Stop")
                         .font(.system(size: 15, weight: .bold))
-                        .foregroundColor(.white)
+                        .foregroundColor(.baseColors.white)
                 ))
             }
             .padding([.all], 15)

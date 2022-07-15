@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject private var viewModel = CarInfoViewModel()
-    @State private var carLockingInfo: CarLockedInfoViewModel = CarLockedInfoViewModel()
+    @State private var carLockingInfo = CarLockedInfoViewModel()
     @State private var isShowingToast = false
     @State private var toastViewMessage: String = ""
     

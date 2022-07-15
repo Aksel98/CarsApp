@@ -119,6 +119,14 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		92D2338628812E780074DCAF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				92D31341287CD38200B32112 /* CarLockedInfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		92D31334287CA8D000B32112 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,14 +162,6 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
-		92D31340287CD35800B32112 /* Configs */ = {
-			isa = PBXGroup;
-			children = (
-				92D31341287CD38200B32112 /* CarLockedInfoViewModel.swift */,
-			);
-			path = Configs;
-			sourceTree = "<group>";
-		};
 		92D31347287CD9E100B32112 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,7 +181,6 @@
 		92D86F6E28793B880095A2A1 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
-				92D31340287CD35800B32112 /* Configs */,
 				92D3133D287CD32E00B32112 /* Enums */,
 				92D3133C287CD31000B32112 /* Views */,
 				92D86F6F28793BA10095A2A1 /* HomeView.swift */,
@@ -265,6 +264,7 @@
 		92D86F88287B9E350095A2A1 /* CarActionsView */ = {
 			isa = PBXGroup;
 			children = (
+				92D2338628812E780074DCAF /* ViewModel */,
 				92D2338028810F140074DCAF /* LockButtonView.swift */,
 				92D2338228810F2C0074DCAF /* CarEngineActionsView.swift */,
 				92D86F80287B84700095A2A1 /* CarActionsView.swift */,

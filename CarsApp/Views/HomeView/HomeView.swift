@@ -40,7 +40,7 @@ struct HomeView: View {
             ToastView(isShowing: $isShowingToast, duration: 5, message: toastViewMessage).offset(x: 0, y: 50)
                     
             if carLockingInfo.isShownLockedDoorsPermissionAlert {
-                showDoorsActionsAlert(showingAlert: $carLockingInfo.isShownLockedDoorsPermissionAlert, message: "Please confirm, that you want to lock the doors of \(viewModel.getTitle() ?? "Swift")", doneButtonTitle: "Yes, Lock", complition: {
+                AlertView(showingAlert: $carLockingInfo.isShownLockedDoorsPermissionAlert, title: "Are you sure?", message: "Please confirm, that you want to lock the doors of \(viewModel.getTitle() ?? "Swift")", doneButtonTitle: "Yes, Lock", complition: {
                     carLockingInfo.isDoorsLockingInProgress.toggle()
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
@@ -51,7 +51,7 @@ struct HomeView: View {
                     })
                 })
             } else if carLockingInfo.isShownUnlockedDoorsPermissionAlert {
-                showDoorsActionsAlert(showingAlert: $carLockingInfo.isShownUnlockedDoorsPermissionAlert, message: "Please confirm, that you want to unlock the doors of \(viewModel.getModel() ?? "Swift")", doneButtonTitle: "Yes, Unlock", complition: {
+                AlertView(showingAlert: $carLockingInfo.isShownUnlockedDoorsPermissionAlert, title: "Are you sure?", message: "Please confirm, that you want to unlock the doors of \(viewModel.getModel() ?? "Swift")", doneButtonTitle: "Yes, Unlock", complition: {
                     carLockingInfo.isDoorsUnlockingInProgress.toggle()
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
@@ -63,10 +63,6 @@ struct HomeView: View {
                 })
             }
         }
-    }
-    
-    private func showDoorsActionsAlert(showingAlert: Binding<Bool>, title: String = "Are you sure?", message: String, doneButtonTitle: String, complition: @escaping () -> Void) -> some View {
-        return AlertView(showingAlert: showingAlert, title: title, message: message, doneButtonTitle: doneButtonTitle, complition: complition)
     }
 }
 

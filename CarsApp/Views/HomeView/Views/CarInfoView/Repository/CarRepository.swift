@@ -9,22 +9,27 @@ import Foundation
 
 struct CarRepository {
     
-    func fetchCar(complition: @escaping (Result<User, Error>) -> Void) {
-        guard let url = URL(string: "https://randomuser.me/api?seed=renderforest&results=20&page=1") else { return }
+    func fetchCar(complition: @escaping (Result<CarModel, Error>) -> Void) {
+        let headers = [
+            "X-RapidAPI-Key": "19e4baebfbmsh8c8d6d6a55ff028p13f81cjsn40223d21aaa8",
+            "X-RapidAPI-Host": "cars20.p.rapidapi.com"
+        ]
 
-        URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+        let request = NSMutableURLRequest(url: NSURL(string: "https://cars20.p.rapidapi.com/extract/?zip_code=23831")! as URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+        request.allHTTPHeaderFields = headers
+
+        URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             guard let data = data, error == nil else {
                 complition(.failure(error!))
                 return
             }
 
             do {
-                let data = try JSONDecoder().decode(Result_.self, from: data)
+                let jsonData = try JSONDecoder().decode(CarsResult.self, from: data)
 
                 DispatchQueue.main.async {
-                    guard let user = data.results.randomElement() else { return }
-
-                    complition(.success(user))
+                    guard let car = jsonData.data.listings.filter({ !$0.image.isEmpty }).randomElement() else { return }
+                    complition(.success(car))
                 }
             } catch {
                 complition(.failure(error))

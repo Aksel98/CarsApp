@@ -10,6 +10,7 @@
 		92D2337F2880FE920074DCAF /* CarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D2337E2880FE910074DCAF /* CarRepository.swift */; };
 		92D2338128810F140074DCAF /* LockButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D2338028810F140074DCAF /* LockButtonView.swift */; };
 		92D2338328810F2C0074DCAF /* CarEngineActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D2338228810F2C0074DCAF /* CarEngineActionsView.swift */; };
+		92D233852881181F0074DCAF /* CarInfoViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D233842881181F0074DCAF /* CarInfoViewModelTests.swift */; };
 		92D3132E287C9B8900B32112 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D3132D287C9B8900B32112 /* AlertView.swift */; };
 		92D31336287CA8DB00B32112 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D31335287CA8DB00B32112 /* CarModel.swift */; };
 		92D31338287CAE8500B32112 /* CarsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D31337287CAE8500B32112 /* CarsResult.swift */; };
@@ -56,6 +57,7 @@
 		92D2337E2880FE910074DCAF /* CarRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRepository.swift; sourceTree = "<group>"; };
 		92D2338028810F140074DCAF /* LockButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockButtonView.swift; sourceTree = "<group>"; };
 		92D2338228810F2C0074DCAF /* CarEngineActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarEngineActionsView.swift; sourceTree = "<group>"; };
+		92D233842881181F0074DCAF /* CarInfoViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoViewModelTests.swift; sourceTree = "<group>"; };
 		92D3132D287C9B8900B32112 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		92D31335287CA8DB00B32112 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
 		92D31337287CAE8500B32112 /* CarsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsResult.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				92D95CF92878B7FD00B8211A /* CarsAppTests.swift */,
+				92D233842881181F0074DCAF /* CarInfoViewModelTests.swift */,
 			);
 			path = CarsAppTests;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92D95CFA2878B7FD00B8211A /* CarsAppTests.swift in Sources */,
+				92D233852881181F0074DCAF /* CarInfoViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

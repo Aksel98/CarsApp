@@ -13,14 +13,15 @@ final class CarInfoViewModel: ObservableObject {
     
     private let repository = CarRepository()
     
-    func fetchData() {
-        repository.fetchCar(complition: { car in
+    func fetchData(complition: ((Result<CarModel, Error>) -> Void)? = nil) {
+        repository.fetchCar(complition: { result in
             switch result {
-            case .success(let user):
+            case .success(let car):
                 self.car = car
             case .failure(let error):
                 print("Error: \(error.localizedDescription)")
             }
+            complition?(result)
         })
     }
     
